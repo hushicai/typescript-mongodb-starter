@@ -1,9 +1,17 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import { listBooks, getBook, addBook, updateBook, deleteBook } from './controllers/book';
 
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
-app.get('/', (req: Request, res: Response) => res.send('hello world'));
+
+// routers
+app.get('/books', listBooks);
+app.get('/books/{id}', getBook);
+app.post('/add', addBook);
+app.put('/books/{id}', updateBook);
+app.delete('/books/{id}', deleteBook);
+
 app.listen(app.get('port'), () => {
   console.log('App is running on http://localhost:%d', app.get('port'));
 });
