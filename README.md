@@ -1,5 +1,7 @@
 # typescript mongodb starter
 
+typescript mongodb 学习例子。
+
 ## docker
 
 使用 docker 来安装 mongodb。
